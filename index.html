@@ -4,42 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="device-width, initial-scale=1.0">
     <title>Pook</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        background-color: #9AADBF;
+        
       }
       body {
         height: 100vh;
         width: 100%;
         display: flex;
-        align-items: center;
+        text-align: center;
+        /* align-items: center; */
         justify-content: center;
         flex-direction: column;
       }
-      buttons {
+      button {
+        padding: 1rem;
         height: 40px;
         width: 80px;
       }
-      .btnYes {
-        background-color: #6D98BA;
-      }
-      .btnYes:hover {
-        background-color: rgb(112,143,174);
-      }
       .btnNo {
-        background-color: #6D98BA;
+        position: absolute;
+        margin: 10px;
+        top: 54%;  /* position the top  edge of the element at the middle of the parent */
+        left: 60%; /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%);
       }
-      .btnNo:hover {
-        background-color: rgb(112,143,174);
+      .btnYes {
+        padding: 5px;
+        margin: 10px;
+        left: 70%;
+        transform: translate(-60%, 12%);
       }
     </style>
   </head>
   <body>
     <h1>Do you want to see your present?</h1>
     <div class="buttons">
-      <button class="btnYes">Yes</button>
-      <button class="btnNo">No</button>
+      <button class="btnYes w3-button w3-round-large w3-green" type="submit" onclick="hrefFunction()">Yes</button>
+      <button class="btnNo w3-button w3-round-large w3-red" id="btnNo">No</button>
+    </div>
   </body>
 </html>
+<script>
+    $('button').on('mouseover', function() {
+    $(this).animate({
+        'top': Math.random() * window.innerHeight + "px",
+        'left': Math.random() * window.innerWidth + "px"
+    }, "medium");
+    })
+
+    function hrefFunction(){
+                window.location.href = "yes.html";
+            }
+</script>
